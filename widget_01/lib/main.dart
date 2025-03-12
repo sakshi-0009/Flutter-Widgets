@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget{
         body: Center(
           child: Text("Hello Sakshi", style: TextStyle(
             fontSize: 30,
-            fontWeight: FontWeight.w200
+            fontWeight: FontWeight.w500
           ),),
         ),
       ),
