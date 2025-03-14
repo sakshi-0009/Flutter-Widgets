@@ -9,9 +9,19 @@ class MyApp extends StatelessWidget{
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
+        appBar: AppBar(
+          title: Text("WhatsApp"),
+          backgroundColor: Colors.lightGreen,
+          actions: [
+            Icon(Icons.favorite_sharp),
+            Icon(Icons.qr_code),
+            Icon(Icons.camera_alt_sharp),
+            Icon(Icons.search),
+          ],
+        ),
         body: Center(
           child: Text("Hello Sakshi", style: TextStyle(
             fontSize: 30,
