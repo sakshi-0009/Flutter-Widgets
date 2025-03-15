@@ -27,7 +27,7 @@ class HomeScreen extends StatelessWidget {
       key: _scaffoldKey, // Assign key to Scaffold
       appBar: AppBar(
         title: const Text("Student Data Management"),
-        backgroundColor: Colors.orange,
+        backgroundColor: Colors.amber,
         centerTitle: true,
         leading: IconButton(
           icon: const Icon(Icons.menu), // Hamburger icon
