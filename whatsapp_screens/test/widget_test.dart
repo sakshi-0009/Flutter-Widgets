@@ -7,13 +7,14 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:whatsapp_screens/LogIn.dart';
 
 import 'package:whatsapp_screens/main.dart';
 
 void main() {
   testWidgets('Counter increments smoke test', (WidgetTester tester) async {
     // Build our app and trigger a frame.
-    await tester.pumpWidget(HomePage());
+    await tester.pumpWidget(LogInPage());
 
     // Verify that our counter starts at 0.
     expect(find.text('0'), findsOneWidget);
