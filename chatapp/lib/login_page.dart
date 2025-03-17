@@ -9,14 +9,10 @@ class LogInPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        title: Text("Chat App"),
+        centerTitle: true,
         backgroundColor: Colors.lightBlue,
       ),
-      drawer: Drawer(
-        width: 200,
-      ),
-      floatingActionButton: FloatingActionButton(onPressed: (){
-        print("Add");
-      }),
       body: Column(
         children: [
           Center(
