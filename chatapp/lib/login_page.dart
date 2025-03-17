@@ -12,6 +12,10 @@ class LogInPage extends StatelessWidget {
         title: Text("Chat App"),
         centerTitle: true,
         backgroundColor: Colors.lightBlue,
+        leading: IconButton(
+          icon: Icon(Icons.chat),
+          onPressed:(){},
+        ),
       ),
       body: Column(
         children: [
