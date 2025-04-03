@@ -27,8 +27,8 @@ class _PasswordState extends State<NewPassword> {
       Get.snackbar(
         "Success",
         "Password changed successfully",
-        backgroundColor: Colors.green,
-        colorText: Colors.white,
+        backgroundColor: Colors.green.shade200,
+        colorText: Colors.green,
         snackPosition: SnackPosition.BOTTOM,
         duration: Duration(seconds: 2),
         borderRadius: 0,
