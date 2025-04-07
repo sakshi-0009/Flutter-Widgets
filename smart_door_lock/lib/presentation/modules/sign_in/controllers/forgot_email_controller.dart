@@ -52,7 +52,7 @@ class ForgotEmailController extends GetxController {
 
   void onConfirmPressed() {
     if (formKey.currentState?.validate() ?? false) {
-      Get.to(() => EmailOtp());
+      Get.toNamed('/email_verify_otp');
     }
   }
 

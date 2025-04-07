@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:otp_text_field/otp_text_field.dart';
 
+import '../views/email_restored_successfully.dart';
+
 class EmailVerifyOtpController extends GetxController {
   final formKey = GlobalKey<FormState>();
   final otpController = OtpFieldController();
@@ -47,7 +49,7 @@ class EmailVerifyOtpController extends GetxController {
 
   void onConfirmPressed() {
     if (otpValue.value.length == 4) {
-      Get.toNamed('/email_restored_successfully');
+      Get.to(RestoredEmail());
     }
   }
 

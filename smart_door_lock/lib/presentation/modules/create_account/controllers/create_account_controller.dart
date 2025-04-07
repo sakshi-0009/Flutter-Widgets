@@ -6,10 +6,12 @@ class CreateAccountController extends GetxController {
   final isChecked = false.obs;
   final isPasswordVisible = false.obs;
   final isConfirmPasswordVisible = false.obs;
+  var passwordMatchMessage = RxnString();
+
+
 
   String selectedCountryCode = "+91";
   String? selectedState;
-  String? passwordMatchMessage;
 
   final emailController = TextEditingController();
   final phoneController = TextEditingController();
@@ -29,12 +31,12 @@ class CreateAccountController extends GetxController {
   }
 
   void checkPasswordsMatch() {
-    passwordMatchMessage =
-    confirmPasswordController.text == passwordController.text &&
-        passwordController.text.isNotEmpty
-        ? null
-        : "Password Not Matched";
-    update();
+    if (confirmPasswordController.text == passwordController.text &&
+        passwordController.text.isNotEmpty) {
+      passwordMatchMessage.value = null;
+    } else {
+      passwordMatchMessage.value = "Password Not Matched";
+    }
   }
 
   void createForm() {
@@ -52,7 +54,7 @@ class CreateAccountController extends GetxController {
     isChecked.value = false;
     isPasswordVisible.value = false;
     isConfirmPasswordVisible.value = false;
-    passwordMatchMessage = null;
+    passwordMatchMessage.value = null;
     selectedState = null;
     selectedCountryCode = "+91";
     update();

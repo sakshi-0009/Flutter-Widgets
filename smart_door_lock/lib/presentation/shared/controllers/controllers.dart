@@ -12,3 +12,5 @@ final TextEditingController passwordController = TextEditingController();
 // controller for confirm password
 final TextEditingController confirmPasswordController = TextEditingController();
 
+final TextEditingController nameController = TextEditingController();
+
