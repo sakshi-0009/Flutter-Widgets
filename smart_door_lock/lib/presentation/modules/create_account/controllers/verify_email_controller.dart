@@ -11,7 +11,7 @@ class VerifyEmailController extends GetxController {
   final otpController = OtpFieldController();
 
   var isButtonEnabled = false.obs;
-  var otpValue = ''.obs;
+  var otpValue = ''.obs;  //stores current OTP input
 
   var remainingTime = 120.obs;
   Timer? _timer;
@@ -22,8 +22,9 @@ class VerifyEmailController extends GetxController {
     startTimer();
   }
 
+  // Start timer:
   void startTimer() {
-    _timer?.cancel();
+    _timer?.cancel();   //cancels previous timer
     remainingTime.value = 120;
     _timer = Timer.periodic(Duration(seconds: 1), (timer) {
       if (remainingTime > 0) {
@@ -34,10 +35,12 @@ class VerifyEmailController extends GetxController {
     });
   }
 
+  // Format timer:
   String formatTime(int timeInSeconds) {
-    int minutes = timeInSeconds ~/ 60;
-    int seconds = timeInSeconds % 60;
-    return '${minutes.toString().padLeft(2, '0')}:${seconds.toString().padLeft(2, '0')}';
+    int minutes = timeInSeconds ~/ 60;  //calculates full minutes
+    int seconds = timeInSeconds % 60;   //remaining seconds after taking out the full minutes
+    return '${minutes.toString().padLeft(2, '0')}:${seconds.toString().padLeft(2, '0')}';   //It combines minutes and seconds like a string
+    // It makes sure that number has at least 2 digits adding a 0 in front if needed.
   }
 
   void onOtpChanged(String pin) {

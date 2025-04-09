@@ -1,5 +1,5 @@
 import 'dart:async';
-import 'package:europa_lock/presentation/modules/home/home.dart';
+import 'package:europa_lock/presentation/modules/home/home_view.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:otp_text_field/otp_text_field.dart';
@@ -49,7 +49,7 @@ class PhoneVerifyOtpController extends GetxController {
 
   void onConfirmPressed() {
     if (otpValue.value.length < 4) return;
-    Get.to(Home());
+    Get.to(HomeView());
   }
 
   void onResendPressed() {

@@ -8,8 +8,6 @@ class CreateAccountController extends GetxController {
   final isConfirmPasswordVisible = false.obs;
   var passwordMatchMessage = RxnString();
 
-
-
   String selectedCountryCode = "+91";
   String? selectedState;
 

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:europa_lock/presentation/modules/create_account/controllers/create_account_controller.dart';
 import 'package:europa_lock/presentation/modules/create_account/views/privacy_policy.dart';
@@ -41,7 +42,9 @@ class CreateAccount extends GetView<CreateAccountController> {
                     filled: true,
                   ),
                   validator: (value) {
-                    if (value == null || value.trim().isEmpty) {
+                    if (value == null || value
+                        .trim()
+                        .isEmpty) {
                       return 'Name is required';
                     }
                     return null;
@@ -61,7 +64,9 @@ class CreateAccount extends GetView<CreateAccountController> {
                     filled: true,
                   ),
                   validator: (value) {
-                    if (value == null || value.trim().isEmpty) {
+                    if (value == null || value
+                        .trim()
+                        .isEmpty) {
                       return 'Email is required';
                     } else if (!RegExp(r'^[a-z0-9.]+@[a-z]+\.[a-z]{2,4}$')
                         .hasMatch(value.trim())) {
@@ -100,9 +105,14 @@ class CreateAccount extends GetView<CreateAccountController> {
                     Expanded(
                       child: TextFormField(
                         maxLength:
-                        isPhoneNumber(controller.phoneController.text) ? 10 : null,
+                        isPhoneNumber(controller.phoneController.text)
+                            ? 10
+                            : null,
                         controller: controller.phoneController,
                         keyboardType: TextInputType.phone,
+                        inputFormatters: [
+                          LengthLimitingTextInputFormatter(10),
+                        ],
                         validator: validatePhone,
                         decoration: const InputDecoration(
                           labelText: "Phone Number",
@@ -119,21 +129,25 @@ class CreateAccount extends GetView<CreateAccountController> {
               buildSearchField("State"),
               buildSearchField("City"),
 
-              Obx(() => buildPasswordField(
-                label: "Password",
-                controller: controller.passwordController,
-                isPasswordVisible: controller.isPasswordVisible.value,
-                onToggleVisibility: controller.togglePasswordVisibility,
-                validator: validatePassword,
-              )),
-              Obx(() => buildPasswordField(
-                label: "Confirm Password",
-                controller: controller.confirmPasswordController,
-                isPasswordVisible: controller.isConfirmPasswordVisible.value,
-                onToggleVisibility: controller.toggleConfirmPasswordVisibility,
-                validator: validateConfirmPassword,
-                onChanged: (_) => controller.checkPasswordsMatch(),
-              )),
+              Obx(() =>
+                  buildPasswordField(
+                    label: "Password",
+                    controller: controller.passwordController,
+                    isPasswordVisible: controller.isPasswordVisible.value,
+                    onToggleVisibility: controller.togglePasswordVisibility,
+                    validator: validatePassword,
+                  )),
+              Obx(() =>
+                  buildPasswordField(
+                    label: "Confirm Password",
+                    controller: controller.confirmPasswordController,
+                    isPasswordVisible: controller.isConfirmPasswordVisible
+                        .value,
+                    onToggleVisibility: controller
+                        .toggleConfirmPasswordVisibility,
+                    validator: validateConfirmPassword,
+                    onChanged: (_) => controller.checkPasswordsMatch(),
+                  )),
 
               Obx(() {
                 if (controller.passwordMatchMessage.value != null) {
@@ -150,11 +164,12 @@ class CreateAccount extends GetView<CreateAccountController> {
 
               Row(
                 children: [
-                  Obx(() => Checkbox(
-                    value: controller.isChecked.value,
-                    onChanged: (value) =>
-                    controller.isChecked.value = value!,
-                  )),
+                  Obx(() =>
+                      Checkbox(
+                        value: controller.isChecked.value,
+                        onChanged: (value) =>
+                        controller.isChecked.value = value!,
+                      )),
                   const Text("I agree to ", style: TextStyle(fontSize: 13)),
                   GestureDetector(
                     onTap: () => Get.to(PrivacyPolicy()),
@@ -177,26 +192,28 @@ class CreateAccount extends GetView<CreateAccountController> {
               ),
 
               const SizedBox(height: 10),
-              Obx(() => ElevatedButton(
-                onPressed:
-                controller.isChecked.value ? controller.createForm : null,
-                style: ElevatedButton.styleFrom(
-                  foregroundColor: controller.isChecked.value
-                      ? Colors.white
-                      : Colors.black,
-                  backgroundColor: controller.isChecked.value
-                      ? Colors.red.shade700
-                      : Colors.grey,
-                  minimumSize: const Size(double.infinity, 50),
-                ),
-                child: const Text("Create Account"),
-              )),
+              Obx(() =>
+                  ElevatedButton(
+                    onPressed:
+                    controller.isChecked.value ? controller.createForm : null,
+                    style: ElevatedButton.styleFrom(
+                      foregroundColor: controller.isChecked.value
+                          ? Colors.white
+                          : Colors.black,
+                      backgroundColor: controller.isChecked.value
+                          ? Colors.red.shade700
+                          : Colors.grey,
+                      minimumSize: const Size(double.infinity, 50),
+                    ),
+                    child: const Text("Create Account"),
+                  )),
 
               const SizedBox(height: 10),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  const Text("Have an account? ", style: TextStyle(fontSize: 17)),
+                  const Text(
+                      "Have an account? ", style: TextStyle(fontSize: 17)),
                   GestureDetector(
                     onTap: () {
                       controller.resetForm();
@@ -216,7 +233,7 @@ class CreateAccount extends GetView<CreateAccountController> {
                 width: double.infinity,
                 child: ElevatedButton.icon(
                   onPressed: () => print("Sign in with google clicked"),
-                  icon: Image.asset('assets/icons/google_logo.png',
+                  icon: Image.asset('assets/icons/socialIcon.png',
                       width: 40, height: 30),
                   label: const Text("Sign in with Google",
                       style: TextStyle(color: Colors.black)),

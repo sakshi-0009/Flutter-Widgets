@@ -1,4 +1,4 @@
-import 'package:europa_lock/presentation/modules/home/home.dart';
+import 'package:europa_lock/presentation/modules/home/home_view.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -31,7 +31,7 @@ class PasswordController extends GetxController {
 
   void onContinuePressed() {
     if (formKey.currentState?.validate() ?? false) {
-      Get.to(Home());
+      Get.to(HomeView());
     }
   }
 

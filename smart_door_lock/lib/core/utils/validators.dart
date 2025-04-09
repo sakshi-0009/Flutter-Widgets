@@ -5,7 +5,6 @@ String? validateEmailOrPhone(String? value) {
     return 'Please enter an email or phone number';
   }
   String emailPattern =
-      // r'^[a-zA-Z0-9.]+@[gmail,tudip]+\.[com]{2,4}$';
       r'^[a-z0-9.]+@[a-z]+\.[a-z]{2,4}$';
 
   String phonePattern = r'^[0-9]{10}$';
@@ -25,7 +24,6 @@ String? validateEmail(String? value) {
   }
   String emailPattern =
       r'^[a-z0-9.]+@[a-z]+\.[a-z]{2,4}$';
-  //     r'^[a-z0-9.]+@(gmail\.com|tudip\.com)$';
 
   if (RegExp(emailPattern).hasMatch(value)) {
     return null;
@@ -66,4 +64,5 @@ String? validateConfirmPassword(String? value) {
   if (value == null || value.isEmpty) {
     return 'Please enter correct password';
   }
+  return null;
 }

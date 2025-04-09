@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:get/get.dart';
-
-import '../controllers/forgot_email_controller.dart';
+import 'package:europa_lock/presentation/modules/sign_in/controllers/forgot_email_controller.dart';
 
 class ForgotEmail extends GetView<ForgotEmailController> {
   const ForgotEmail({super.key});
@@ -68,6 +68,9 @@ class ForgotEmail extends GetView<ForgotEmailController> {
                           validator: controller.validatePhone,
                           onChanged: (_) => controller.validateForm(),
                           maxLength: 10,
+                          inputFormatters: [
+                            LengthLimitingTextInputFormatter(10),
+                          ],
                           decoration: const InputDecoration(
                             labelText: "Phone Number",
                             border: OutlineInputBorder(),

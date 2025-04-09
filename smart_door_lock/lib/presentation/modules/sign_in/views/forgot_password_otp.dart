@@ -2,8 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:otp_text_field/otp_text_field.dart';
 import 'package:otp_text_field/style.dart';
-
-import '../controllers/forgot_password_otp_controller.dart';
+import 'package:europa_lock/presentation/modules/sign_in/controllers/forgot_password_otp_controller.dart';
 
 class ForgotPasswordOtp extends GetView<ForgotPasswordOtpController> {
   const ForgotPasswordOtp({super.key});

@@ -12,7 +12,7 @@ class ForgotPasswordController extends GetxController {
   void onInit() {
     super.onInit();
     emailFocusNode.addListener(() {
-      update(); // for UI if needed
+      update();
     });
   }
 

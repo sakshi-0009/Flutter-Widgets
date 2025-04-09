@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import '../../../../core/utils/validators.dart';
-import '../controllers/create_new_password_controller.dart';
+import 'package:europa_lock/core/utils/validators.dart';
+import 'package:europa_lock/presentation/modules/sign_in/controllers/create_new_password_controller.dart';
 
 class CreateNewPassword extends GetView<CreateNewPasswordController> {
   const CreateNewPassword({super.key});

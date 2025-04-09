@@ -1,5 +1,5 @@
 import 'package:get/get.dart';
-import '../../presentation/modules/sign_in/controllers/create_new_password_controller.dart';
+import 'package:europa_lock/presentation/modules/sign_in/controllers/create_new_password_controller.dart';
 
 class CreateNewPasswordBinding extends Bindings {
   @override

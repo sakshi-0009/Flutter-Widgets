@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import '../../../../core/utils/validators.dart';
 
+//Controller initialization:
 class SignInController extends GetxController {
   final emailController = TextEditingController();
   final formKey = GlobalKey<FormState>();
@@ -38,6 +38,7 @@ class SignInController extends GetxController {
     return emailRegex.hasMatch(input);
   }
 
+  //called when input field changes
   void onChanged(String value) {
     isButtonPressed.value = formKey.currentState?.validate() ?? false;
   }
@@ -57,10 +58,12 @@ class SignInController extends GetxController {
     }
   }
 
+  // Google Sign-in integration
   void signInWithGoogle() {
     print("Sign in with Google clicked");
   }
 
+  // Similar to dispose() in StatefulWidget
   @override
   void onClose() {
     emailController.dispose();

@@ -1,4 +1,4 @@
-import 'package:europa_lock/presentation/modules/home/home.dart';
+import 'package:europa_lock/presentation/modules/home/home_view.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
@@ -14,7 +14,7 @@ class _CongratsState extends State<Congrats> {
   final _formKey = GlobalKey<FormState>();
 
   void onVerifyPressed() {
-    Get.to(Home());
+    Get.to(HomeView());
   }
   @override
   Widget build(BuildContext context) {

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import '../views/email_verify_otp.dart';
 
 class ForgotEmailController extends GetxController {
   final formKey = GlobalKey<FormState>();

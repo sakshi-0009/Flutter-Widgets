@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:otp_text_field/otp_text_field.dart';
 import 'package:otp_text_field/style.dart';
-import '../controllers/email_verify_otp_controller.dart';
+import 'package:europa_lock/presentation/modules/sign_in/controllers/email_verify_otp_controller.dart';
 
 class EmailOtp extends GetView<EmailVerifyOtpController> {
   const EmailOtp({super.key});

@@ -1,6 +1,6 @@
 import 'package:get/get.dart';
 
-import '../../presentation/modules/sign_in/controllers/email_verify_otp_controller.dart';
+import 'package:europa_lock/presentation/modules/sign_in/controllers/email_verify_otp_controller.dart';
 
 class EmailVerifyOtpBinding extends Bindings {
   @override
